@@ -1,0 +1,12 @@
+.blog {
+  width: 80%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: $color-grey-light-2;
+  border-radius: 10px;
+
+  &__header {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+}

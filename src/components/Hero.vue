@@ -10,11 +10,28 @@
         <span class="heading-primary--sub">is where life happens</span>
       </h1>
 
-      <router-link to="/auth" class="btn btn--white btn--animated"
+      <router-link
+        v-if="userStore.isLoggedIn == true"
+        to="/blogs"
+        class="btn btn--white btn--animated"
+        >See Blogs</router-link
+      >
+
+      <router-link v-else to="/auth" class="btn btn--white btn--animated"
         >Login / sign up</router-link
       >
     </div>
   </header>
 </template>
 
-<style lang="scss" scoped></style>
+<script>
+import { mapStores } from "pinia";
+import { useUserStore } from "../stores/user";
+
+export default {
+  name: "Hero",
+  computed: {
+    ...mapStores(useUserStore),
+  },
+};
+</script>

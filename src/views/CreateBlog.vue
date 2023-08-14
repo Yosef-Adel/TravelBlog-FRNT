@@ -3,33 +3,23 @@
     <Loading />
   </template>
   <template v-else>
-    <template v-if="haseAccount">
-      <Login @onClickSignup="haseAccount = false" />
-    </template>
-    <template v-else>
-      <Signup @onClickLogin="haseAccount = true" />
-    </template>
+    <Form />
   </template>
 </template>
 
 <script>
-import Signup from "../components/Signup.vue";
-import Login from "../components/Login.vue";
+import Form from "../components/Form.vue";
 import Loading from "../components/Loading.vue";
 
 export default {
-  name: "Auth",
-
+  name: "CreateBlog",
   data() {
     return {
-      haseAccount: true,
       isLoading: true,
     };
   },
-
   components: {
-    Signup,
-    Login,
+    Form,
     Loading,
   },
   mounted() {

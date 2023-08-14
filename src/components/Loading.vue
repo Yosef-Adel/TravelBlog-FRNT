@@ -1,0 +1,51 @@
+<template>
+  <div class="container">
+    <div class="loading"></div>
+  </div>
+</template>
+<script>
+export default {
+  name: "Loading",
+};
+</script>
+
+<style scoped>
+.container {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: #7aafe2;
+}
+
+.loading {
+  width: 300px;
+  height: 3px;
+  background-color: white;
+  animation: line 2s infinite alternate;
+}
+
+@keyframes line {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  45% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  50% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+</style>

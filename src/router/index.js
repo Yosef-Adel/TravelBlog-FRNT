@@ -20,6 +20,23 @@ const router = createRouter({
       name: "auth",
       component: () => import("../views/Auth.vue"),
     },
+    {
+      path: "/create-blog",
+      name: "createBlog",
+      component: () => import("../views/CreateBlog.vue"),
+    },
+    // // add blog route
+    // {
+    //   path: "/blog/:id",
+    //   name: "blog",
+    //   component: () => import("../views/Blog.vue"),
+    // },
+    // // add blogs route
+    {
+      path: "/blogs",
+      name: "blogs",
+      component: () => import("../views/Blogs.vue"),
+    },
   ],
 });
 

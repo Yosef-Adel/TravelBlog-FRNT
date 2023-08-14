@@ -23,15 +23,15 @@
             ><span>01</span>Home</router-link
           >
         </li>
-        <li class="navigation__item">
+        <li class="navigation__item" v-if="userStore.isLoggedIn == true">
           <router-link
-            to="/blog"
+            to="/blogs"
             class="navigation__link"
             @click="isChecked = false"
             ><span>02</span>Blogs</router-link
           >
         </li>
-        <li class="navigation__item">
+        <li class="navigation__item" v-if="userStore.isLoggedIn == true">
           <router-link
             to="/create-blog"
             class="navigation__link"
@@ -39,12 +39,26 @@
             ><span>03</span>Create Blog</router-link
           >
         </li>
-        <li class="navigation__item">
+        <li class="navigation__item" v-if="userStore.isLoggedIn == false">
           <router-link
             to="/auth"
             class="navigation__link"
             @click="isChecked = false"
             ><span>04</span>Login</router-link
+          >
+        </li>
+        <li class="navigation__item" v-if="userStore.isLoggedIn == true">
+          <router-link
+            to="/profile"
+            class="navigation__link"
+            @click="isChecked = false"
+            ><span>04</span>Profile</router-link
+          >
+        </li>
+
+        <li class="navigation__item" v-if="userStore.isLoggedIn == true">
+          <router-link to="/" class="navigation__link" @click="LogoutFunction"
+            ><span>05</span>Logout</router-link
           >
         </li>
       </ul>
@@ -53,6 +67,8 @@
 </template>
 
 <script>
+import { mapStores } from "pinia";
+import { useUserStore } from "../stores/user";
 export default {
   name: "NavBar",
   data() {
@@ -60,7 +76,16 @@ export default {
       isChecked: false,
     };
   },
+  computed: {
+    ...mapStores(useUserStore),
+  },
+
+  methods: {
+    LogoutFunction() {
+      this.userStore.logout();
+      this.$router.push({ name: "home" });
+      this.isChecked = false;
+    },
+  },
 };
 </script>
-
-<style lang="scss" scoped></style>
