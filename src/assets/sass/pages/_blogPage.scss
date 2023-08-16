@@ -1,0 +1,71 @@
+.blog-page {
+  min-height: 100vh;
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+
+  &__blog {
+    width: 80%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: $color-grey-light-2;
+    border-radius: 10px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+    &__header {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+  }
+}
+.blog {
+  &__controller {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+  }
+  &__btn {
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    font-size: $default-font-size;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+}
+.comment {
+  width: 80%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: $color-grey-light-2;
+  border-radius: 10px;
+  &__header {
+    text-align: center !important;
+  }
+
+  &__form {
+    margin: 2rem 0;
+  }
+
+  &__data {
+    margin: 2rem auto;
+    width: 90%;
+    padding: 2rem;
+    background-color: $color-primary-light;
+    color: white;
+    border-radius: 10px;
+  }
+}
+.form__btn {
+  text-align: center;
+}

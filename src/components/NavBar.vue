@@ -49,7 +49,7 @@
         </li>
         <li class="navigation__item" v-if="userStore.isLoggedIn == true">
           <router-link
-            to="/profile"
+            :to="ProfileLink"
             class="navigation__link"
             @click="isChecked = false"
             ><span>04</span>Profile</router-link
@@ -78,6 +78,9 @@ export default {
   },
   computed: {
     ...mapStores(useUserStore),
+    ProfileLink() {
+      return `/profile/${this.userStore.user.id}`;
+    },
   },
 
   methods: {

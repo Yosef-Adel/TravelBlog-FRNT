@@ -1,0 +1,29 @@
+.profile {
+  min-height: 100vh;
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+  &__user {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: #ffffff;
+
+    &--firstletter {
+      width: 10rem;
+      height: 10rem;
+      margin: auto;
+      background-color: #ffffff;
+      color: #000;
+      line-height: 10rem;
+      border-radius: 50%;
+      font-size: 5rem;
+    }
+  }
+}

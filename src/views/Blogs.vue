@@ -3,7 +3,7 @@
     <Loading />
   </template>
   <div v-else class="section-book">
-    <template v-for="blog in blogs">
+    <template v-for="blog in blogs" :key="blog.id">
       <div>
         <Blog :blog="blog" />
       </div>
